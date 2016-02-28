@@ -1,14 +1,18 @@
 # solutions4clojure
 
-A Clojure library designed to ... well, that part is up to you.
-
 ## Usage
 
-FIXME
+`lein repl`
 
-## License
+`(test-run)`
 
-Copyright © 2016 FIXME
+If you make changes: `(refresh)`
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+`test-run` implementation:
+
+```clojure
+(defn test-run []
+  (doseq [n test-namespaces]
+    (require n))
+  (apply run-tests test-namespaces))
+```
